@@ -1,9 +1,9 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "react-redux-weather-forecast-app",
   "version": "1.0.0",
-  "description": "Boilerplate to setup your react-redux app with eslint lint and jest",
+  "description": "App built in react redux for weather forecast",
   "author": "Nikita-Jajodia",
-  "repository": "https://github.com/nikitajajodia/react-redux-boilerplate.git",
+  "repository": "https://github.com/nikitajajodia/react-redux-weather-forecast.git",
   "scripts": {
     "dev": "webpack-dev-server --historyApiFallback true --port 8888 --content-base build/",
     "test": "jest"
