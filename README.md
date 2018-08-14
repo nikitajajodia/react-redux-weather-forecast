@@ -1,4 +1,4 @@
-React-Redux BoilerPlate with JEST, EsLint, Enzyme
+React-Redux weather forecast app
 
 npm install
 
