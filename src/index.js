@@ -10,7 +10,9 @@ import {
   Switch
 } from 'react-router-dom';
 
-import { HomePage } from './screens';
+import {
+  App 
+} from './components';
 
 import {
   Provider
@@ -19,13 +21,13 @@ import {
 import configureStore from './store';
 const store = configureStore();
 
-class App extends React.Component {
+class WeatherApp extends React.Component {
   render() {
     return (
     	<Provider store={store}>
     		<BrowserRouter history={browserHistory}>
             <Switch>
-            	<Route exact path="/" component={HomePage} />
+            	<Route exact path="/" component={App} />
             </Switch>
             </BrowserRouter>
     	</Provider>
@@ -33,4 +35,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<WeatherApp />, document.getElementById('app'));
