@@ -4,6 +4,7 @@ import Config from '../config';
 const {
   baseUri
 } = Config;
+console.log("jscd", baseUri)
 
 const get = (url, params, headers) => new Promise((resolve) => {
   axios.get(baseUri + url, { params, headers })
@@ -35,7 +36,7 @@ const deleteCall = (url, headers) => new Promise((resolve) => {
   .catch(error => resolve(error.response));
 });
 
-export default {
+export {
   get,
   post,
   update,

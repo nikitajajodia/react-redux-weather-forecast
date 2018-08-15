@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 
-import authObject from './AuthReducer';
+import appObj from './AppReducer';
 
 export default combineReducers({
-	authObject
+	appObj
 });
