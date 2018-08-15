@@ -4,7 +4,6 @@ import Config from '../config';
 const {
   baseUri
 } = Config;
-console.log("jscd", baseUri)
 
 const get = (url, params, headers) => new Promise((resolve) => {
   axios.get(baseUri + url, { params, headers })

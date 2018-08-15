@@ -23,29 +23,35 @@ class SearchBar extends Component {
 	onFormSubmit(event) {
 		event.preventDefault();
 		this.props.fetchWeather(this.state.term);
+		this.setState({
+			term: ''
+		})
 	}
 	render() {
 		return(
-			<form
-				onSubmit={this.onFormSubmit}
-				className='input-group'>
-				<input
-					placeholder='Get a five-day forecast for any city'
-					className='form-control'
-					value={this.state.term}
-					onChange={this.onInputChange}
-				/>
-				<span className='input-group-btn'>
-					<button type='submit' className='btn btn-secondary'>Search</button>
-				</span>
-			</form>
+			<div>
+				<p className='is-error'>{this.props.error}</p>
+				<form
+					onSubmit={this.onFormSubmit}
+					className='input-group'>
+					<input
+						placeholder='Get a five-day forecast for any city'
+						className='form-control'
+						value={this.state.term}
+						onChange={this.onInputChange}
+					/>
+					<span className='input-group-btn'>
+						<button type='submit' className='btn btn-secondary'>Search</button>
+					</span>
+				</form>
+			</div>
 		)
 	}
 }
 
 function mapStateToProps(state) {
 	return {
-		weather: state.get('appObj').get('weather')
+		error: state.get('appObj').get('fetchWeatherError')
 	}
 }
 

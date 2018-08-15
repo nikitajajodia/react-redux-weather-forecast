@@ -18,10 +18,10 @@ function* fetchWeather() {
       type: actionTypes.FETCH_WEATHER_REQUEST
     });
     const response = yield call(get, `&q=${city}`, null, null)
-    if(response.cod >= 400) {
+    if(response.status >= 400) {
       yield put({
         type: actionTypes.FETCH_WEATHER_ERROR,
-        error: response.message
+        error: response.data.message
       });
     } else {
       yield put({
