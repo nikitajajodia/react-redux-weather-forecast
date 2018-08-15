@@ -1,4 +1,4 @@
-React-Redux weather forecast app
+React-Redux weather forecast app. Using react-sparklines for generating the weather charts.
 
 npm install
 

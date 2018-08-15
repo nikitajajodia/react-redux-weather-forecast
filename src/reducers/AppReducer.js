@@ -10,13 +10,11 @@ const initialState = Map({
 export default function appReducer(state = initialState, action) {
 	switch (action.type) {
 		case actionTypes.FETCH_WEATHER_SUCCESS: {
-			console.log("ation", action.data);
-			return state.set('weather', action.data)
+			return state.set('weather', state.get('weather').concat(action.data))
 				.set('fetchWeatherError', '')
 		}
 		case actionTypes.FETCH_WEATHER_ERROR: {
 			return state.set('fetchWeatherError', action.error)
-				.set('weather', null)
 		}
 
 		default:
